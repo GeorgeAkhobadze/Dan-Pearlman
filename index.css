@@ -1,0 +1,852 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/fonts/FuturaPTBold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/fonts/FuturaPTMedium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/fonts/FuturaPTNormal.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('./assets/fonts/FuturaPTLight.otf');
+  font-weight: 300;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10rem;
+  line-height: 108px;
+  color: white;
+  max-width: 1478px;
+  font-family: 'Futura';
+  font-weight: 400;
+}
+
+.expertise-section {
+  background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-section-gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.expertise-img-container {
+  padding-top: 10.5rem;
+  padding-left: 23.5rem;
+  height: 90%;
+}
+
+.img-container-retail {
+  height: 100%;
+  width: 100%;
+}
+
+.img-container-retail img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.expertise-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.expertise-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expertise-content {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-top: 10.5rem;
+  padding-left: 14rem;
+  padding-right: 6.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.6rem;
+}
+
+.retail-content {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-left: 14rem;
+  padding-right: 6.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.6rem;
+}
+
+.expertise-text h2 {
+  font-family: 'Futura';
+  font-weight: 400;
+  font-size: 15rem;
+  line-height: 16rem;
+}
+
+.retail-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.hero-text-sm {
+  font-size: 8rem !important;
+}
+
+.retail-hero-text-h2 span {
+  /* font-size: 10rem; */
+}
+
+.retail-hero-text span {
+  font-size: 10rem;
+}
+
+.retail-hero-text h2 {
+  font-family: 'Futura';
+  font-weight: 400;
+  font-size: 10rem;
+  line-height: 11rem;
+  text-transform: uppercase;
+}
+
+.retail-hero-text p {
+  font-family: 'Futura';
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  max-width: 68rem;
+}
+
+.expertise-text p {
+  font-family: Helvetica;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  max-width: 46.9rem;
+}
+
+.skip-down-btn {
+  position: relative;
+  z-index: 1;
+  position: absolute;
+  bottom: 2.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.expertise-section-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: center;
+  gap: 5rem;
+  margin-bottom: 6rem;
+  z-index: 1;
+}
+
+.expertise-section-list button {
+  background-color: transparent;
+  font-family: 'Futura';
+  font-weight: 400;
+  border: none;
+  padding-bottom: 2rem;
+  color: #fff;
+  font-size: 2.4rem;
+  border-bottom: 4px solid #fff;
+  letter-spacing: 4px;
+  opacity: 0.4;
+}
+
+.work-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.work-section-title {
+  padding-left: 8.5%;
+}
+
+.work-section-title h3 {
+  font-size: 15rem;
+  line-height: 16rem;
+  font-family: 'Futura';
+  font-weight: 400;
+}
+
+.expertise-btn--active {
+  opacity: 1 !important;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13.2rem;
+  overflow-y: scroll;
+  height: 62.2rem;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 62.2rem;
+}
+
+.work-item img {
+  width: 100%;
+}
+
+.work-item-text {
+  padding-left: 9rem;
+}
+
+.work-item-text h5 {
+  font-size: 9rem;
+  line-height: 11rem;
+  font-family: 'Futura';
+  font-weight: 400;
+}
+
+.work-item-text p {
+  font-size: 7rem;
+  font-family: 'Futura';
+  font-weight: 300;
+  line-height: 5rem;
+}
+
+.work-section-title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.section-agencies {
+  background-color: #000000;
+  padding-left: 17rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9rem;
+}
+
+.agencies-title {
+  font-family: 'Futura';
+  font-weight: 600;
+  font-size: 8rem;
+  line-height: 11rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.agencies-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8rem;
+  overflow-y: hidden;
+}
+
+.agencies-list-item {
+  min-width: 66rem;
+  height: 41.5rem;
+  position: relative;
+}
+
+.agencies-list-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding-bottom: 2.7rem;
+  position: relative;
+  z-index: 0;
+}
+.agency-text {
+  color: #fff;
+  font-family: 'Futura';
+  position: absolute;
+  bottom: -1rem;
+  left: 1.4rem;
+  z-index: 2;
+}
+.agency-text p {
+  font-family: 'Futura';
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.agency-text h5 {
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.agency-gradient {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: rgb(7, 7, 7);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.journal-section {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8.4rem;
+}
+
+.journal-section h4 {
+  color: #fff;
+  font-family: 'Futura';
+  font-weight: 400;
+  font-size: 8rem;
+  line-height: 9rem;
+}
+
+.journal-container {
+  display: flex;
+  gap: 4.5rem;
+  margin: 0px 4.5rem;
+}
+
+.journal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2.2rem;
+}
+
+.journal-item-text {
+  color: #fff;
+  font-family: 'Futura';
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.journal-item-text h5 {
+  font-weight: 400;
+  font-size: 4.2rem;
+  line-height: 4.5rem;
+}
+
+.journal-item-text p {
+  font-size: 2rem;
+  line-height: 4.5rem;
+}
+
+.journal-item img {
+  width: 100%;
+  height: 47rem;
+  object-fit: cover;
+}
+
+.section-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8.7rem;
+}
+
+.section-create h5 {
+  color: #000000;
+  font-size: 15rem;
+  line-height: 16rem;
+  font-family: 'Futura';
+  font-weight: 400;
+  text-align: center;
+}
+
+.section-create-buttons {
+  display: flex;
+  gap: 4.5rem;
+}
+
+.section-create-btn {
+  font-family: 'Futura';
+  font-size: 2.4rem;
+  letter-spacing: 0.5rem;
+  font-weight: 400;
+  border: none;
+  background-color: transparent;
+  padding-bottom: 12px;
+  border-bottom: 4px solid black;
+}
+
+.newsletter-section {
+  padding: 11.2rem 0rem 12.9rem 0rem;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.newsletter-section h5 {
+  font-family: 'Futura';
+  font-weight: 400;
+  font-size: 10rem;
+  line-height: 7.2rem;
+  text-align: center;
+}
+
+.newsletter-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+}
+
+.newsletter-input-container input {
+  border: none;
+  background-color: #fff;
+  font-family: 'Roboto';
+  font-size: 1.5rem;
+  padding: 0rem 3rem;
+  box-sizing: border-box;
+  outline: none;
+  height: inherit;
+}
+
+.newsletter-input-container button {
+  height: inherit;
+  border: none;
+  padding: 0 3.8rem;
+  background-color: #1f1c1d;
+  color: #fff;
+}
+
+footer {
+  color: #fff;
+  background-color: #000000;
+  font-family: 'Futura';
+  padding: 15.5rem 28rem 10.5rem 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.footer-nav-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 13rem;
+}
+
+.footer-nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.footer-nav-section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-nav-section-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.footer-nav-section-list a {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-email {
+  font-size: 2.6rem;
+  font-weight: 500;
+  margin-bottom: 4.9rem;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  font-size: 1.3rem;
+}
+
+.offering-text-bullet {
+  width: 3rem;
+  height: 2px;
+  background-color: #000;
+}
+
+.offering-title {
+  font-size: 15rem;
+  line-height: 16rem;
+}
+
+.offering-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 24rem;
+  position: relative;
+}
+
+.offering-text-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6.7rem;
+  max-width: 74rem;
+}
+
+.offering-text-item h3 {
+  font-size: 7rem;
+  line-height: 8rem;
+  font-family: 'Futura';
+  font-weight: 400;
+}
+
+.offering-text-item p {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-family: 'Futura';
+  font-weight: 400;
+}
+
+.offering-text-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.offering-text-list-item p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.offering-title {
+  font-size: 15rem;
+  line-height: 16rem;
+  font-family: 'Futura';
+  font-weight: 400;
+}
+
+.offering-text-list-item {
+  display: flex;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.offering-bullets-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 2rem;
+  margin-left: -7rem;
+}
+
+.offering-bullet {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.experts-section {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.experts-section h3 {
+  color: #fff;
+  font-size: 10rem;
+  font-family: 'Futura';
+  font-weight: 500;
+}
+
+.experts-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.expert-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.expert-list-item img {
+  width: 36rem;
+  height: 61.5rem;
+  object-fit: cover;
+}
+
+.expert-text {
+  color: #fff;
+  font-family: 'Futura';
+}
+
+.expert-text-name {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.expert-text-position {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.client-section {
+  background-color: #000;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #000;
+  gap: 1.5rem;
+  padding: 0rem 0rem 1.5rem 0rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: calc(50% - 0.75rem);
+  height: 53.3rem;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Futura';
+}
+
+.overlay h2 {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.image-wrapper:before {
+  content: '';
+  display: block;
+}
+
+.image-wrapper img,
+.image-wrapper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.image-wrapper .overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.talk-with-us {
+  padding: 12.5rem 0rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6.2rem;
+}
+
+.talk-with-us h3 {
+  font-weight: 500;
+  font-family: 'Futura';
+  color: #000;
+  font-size: 6rem;
+  line-height: 7rem;
+}
+
+.talk-with-us button {
+  background: transparent;
+  border: none;
+  letter-spacing: 0.6rem;
+  border-bottom: 1px solid #707070;
+  font-family: 'Futura';
+  font-size: 3rem;
+  padding-bottom: 1.6rem;
+  cursor: pointer;
+}
+
+.clients-section {
+  padding-top: 20rem;
+  background-color: #000;
+  height: auto;
+}
+
+.comepetence-clients-list {
+  padding: 1.5rem 0rem;
+  background-color: #000;
+}
+
+.thingsdone-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13.5rem;
+  background-color: #fff;
+  font-family: 'Futura';
+}
+
+.thingsdone-section h3 {
+  color: #000;
+  font-size: 10rem;
+  flex: 1;
+}
+
+.thingsdone-list {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  font-weight: 300;
+  gap: 4rem;
+  margin-left: 16rem;
+}
+
+.thingsdone-list-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.slider-section {
+  position: relative;
+}
+
+.slider-container {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-bullets-container {
+  position: absolute;
+  display: flex;
+  gap: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3rem;
+}
+
+.slider-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.clients-section h3 {
+  color: #fff;
+  font-family: 'Futura';
+  font-size: 8rem;
+  font-weight: 500;
+  padding: 5.5rem 0rem;
+  text-align: center;
+}
+
+.clients-section-brand {
+  padding-top: 0;
+}
