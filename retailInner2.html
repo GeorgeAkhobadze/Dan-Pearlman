@@ -10,7 +10,9 @@
   <body>
     <header class="header">
       <div class="header__logo">
-        <img src="./assets/logo.svg" alt="Logo" />
+        <a href="./">
+          <img src="./assets/logo.svg" alt="Logo" />
+        </a>
       </div>
       <div class="header__menu">
         <button class="header__search">
@@ -22,8 +24,8 @@
       </div>
     </header>
     <section class="section expertise-section">
-      <div class="retail-content">
-        <div class="retail-hero-text">
+      <div class="expertise-content expertise-content-retail">
+        <div class="expertise-text expertise-text-retail">
           <h2>
             Bausteine für <br />
             eine erfolgreiche <br />
@@ -32,35 +34,95 @@
           <p>
             Der stationäre Handel steht unter Innovationsdruck. Große
             Plattformen und Online-Pure-Player verändern den Markt. Innenstädte
-            stehen vor einem tiefgreifenden Umbruch.
-            <br /><br />
-            Wir initiieren und moderieren mit agilen Prozessen den Wandel im
-            Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen,
-            innovative Formate zu entwickeln und ganzheitliche,
-            kanalübergreifende Lösungen umzusetzen.
+            stehen vor einem tiefgreifenden Umbruch. Wir initiieren und
+            moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen
+            Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate
+            zu entwickeln und ganzheitliche, kanalübergreifende Lösungen
+            umzusetzen.
           </p>
         </div>
+        <!-- <div class="expertise-section-list">
+            <button class="expertise-btn--active">RETAIL</button>
+            <button>BRAND</button>
+            <button>LEISURE</button>
+            <button>COMMUNICATION</button>
+            <button>CROSS REALITY</button>
+            <button>WORK</button>
+          </div>
+        </div> -->
       </div>
 
-      <div class="expertise-background">
+      <!-- <button class="skip-down-btn">
+        <img src="./assets/skip-down-btn.svg" />
+      </button> -->
+      <div class="expertise-background expertise-background-retail">
         <img
           class="expertise-section-gradient"
           src="./assets/blackgradient.png"
         />
-        <div class="img-container-retail">
-          <img src="./assets/retailor-img.png" />
+        <img class="expertise-section-gradient-mb" src="./assets/black.png" />
+        <div class="expertise-img-container expertise-img-container-retail">
+          <img src="./assets//retailor-img.png" />
         </div>
       </div>
     </section>
     <section class="section offering-section">
-      <div class="offering-bullets-container">
+      <!-- <div class="offering-bullets-container">
         <div class="offering-bullet"></div>
         <div class="offering-bullet"></div>
         <div class="offering-bullet"></div>
         <div class="offering-bullet"></div>
-      </div>
+      </div> -->
       <div class="offering-text-container">
-        <div class="offering-text-item">
+        <div class="accordion-container">
+          <button class="accordion">
+            INTEGRIERTE NACHALTIGKEIT<img
+              class="accordion-arrow"
+              src="./assets/accordion-arrow.svg"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              Wir denken für Sie Nachhaltigkeit in allen Dimensionen. Ihre
+              Stores planen wir mit Mehrwert für die Gesellschaft und als Teil
+              einer lebenswerten Zukunft. Nachhaltigkeit und wirtschaftlicher
+              Erfolg sind für uns ein Dream-Team.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-container">
+          <button class="accordion">
+            INTEGRIERTE NACHALTIGKEIT<img
+              class="accordion-arrow"
+              src="./assets/accordion-arrow.svg"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              Wir denken für Sie Nachhaltigkeit in allen Dimensionen. Ihre
+              Stores planen wir mit Mehrwert für die Gesellschaft und als Teil
+              einer lebenswerten Zukunft. Nachhaltigkeit und wirtschaftlicher
+              Erfolg sind für uns ein Dream-Team.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-container">
+          <button class="accordion">
+            INTEGRIERTE NACHALTIGKEIT<img
+              class="accordion-arrow"
+              src="./assets/accordion-arrow.svg"
+            />
+          </button>
+          <div class="panel">
+            <p>
+              Wir denken für Sie Nachhaltigkeit in allen Dimensionen. Ihre
+              Stores planen wir mit Mehrwert für die Gesellschaft und als Teil
+              einer lebenswerten Zukunft. Nachhaltigkeit und wirtschaftlicher
+              Erfolg sind für uns ein Dream-Team.
+            </p>
+          </div>
+        </div>
+        <!-- <div class="offering-text-item">
           <h3>INTEGRIERTE NACHHALTIGKEIT</h3>
           <p>
             Wir denken für Sie Nachhaltigkeit in allen Dimensionen. Ihre Stores
@@ -82,10 +144,13 @@
               <p>360° Retail Service</p>
             </div>
           </div>
+        </div> -->
+        <div class="what-we-do__container">
+          <div class="what-we-do-item"></div>
         </div>
       </div>
       <h2 class="offering-title">
-        WHAT<br />
+        WHAT<br class="for-desktop" />
         WE DO
       </h2>
     </section>
@@ -220,4 +285,5 @@
       </div>
     </footer>
   </body>
+  <script src="/accordion.js"></script>
 </html>

@@ -48,6 +48,12 @@
 
 @media (max-width: 1024px) {
   html {
+    font-size: 5.33px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
     font-size: 10px;
   }
 }
@@ -65,7 +71,7 @@ body {
 }
 
 .header {
-  position: relative;
+  position: fixed;
   z-index: 100;
   padding-top: 4.2rem;
   padding: 4.2rem 4rem 0rem 4rem;
