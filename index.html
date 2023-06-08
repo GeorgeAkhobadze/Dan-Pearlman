@@ -19,11 +19,49 @@
         <button class="header__search">
           <img src="./assets/search-icon.svg" />
         </button>
-        <button class="header__burger">
+        <button id="header__burger">
           <img src="./assets/burger-icon.svg" />
         </button>
       </div>
     </header>
+    <div id="burger-menu">
+      <div class="burger-header">
+        <div class="header__logo">
+          <img src="./assets/logo.svg" alt="Logo" />
+        </div>
+        <div id="burger-close-btn">
+
+          <img src="./assets/exit-btn-burger.svg"/>
+        </div>
+      </div>
+      <div class="burger-language">
+        <p class="burger-language--active">DE</p>
+          <p>|</p>
+          <P class="burger-language">EN</P>
+      </div>
+      <div class="burger-menu-content">
+        <div class="burger-menu-socials">
+          <p class="burger-menu-socials-text">
+            FOLLOW US:
+          </p>
+          <div class="burger-menu-socials-list">
+            <img src="./assets/Group 25.svg"/>
+          </div>
+
+        </div>
+
+        <div class="burger-list">
+  
+          <div class="burger-list-item ">HOME</div>
+          <div class="burger-list-item ">OUR WORK</div>
+          <div class="burger-list-item burger-list-item--active">BUSINESS AREAS</div>
+          <div class="burger-list-item ">WHO WE ARE</div>
+          <div class="burger-list-item ">DAN GROUP MEMBERS</div>
+          <div class="burger-list-item ">DAN INSIDE</div>
+          <div class="burger-list-item ">CONTACT</div>
+      </div>
+      </div>
+    </div>
     <section class="hero-container">
       <div class="hero__content">
         <h1 class="hero__title">
@@ -368,5 +406,6 @@
       </div>
     </footer>
     <script src="./gsapAnimations.js"></script>
+    <script src="./burgerMenu.js"></script>
   </body>
 </html>
