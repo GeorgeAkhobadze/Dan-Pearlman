@@ -1028,7 +1028,8 @@ footer {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 9rem;
   transform: translateX(0%);
   transition: 0.3s;
   opacity: 0;

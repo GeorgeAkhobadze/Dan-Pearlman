@@ -10,9 +10,7 @@
   <body>
     <header class="header">
       <div class="header__logo">
-        <a href="./">
-          <img src="./assets/logo.svg" alt="Logo" />
-        </a>
+        <img src="./assets/logo.svg" alt="Logo" />
       </div>
       <div class="header__menu">
         <button class="header__search">
@@ -23,6 +21,41 @@
         </button>
       </div>
     </header>
+    <div id="burger-menu">
+      <div class="burger-header">
+        <div class="header__logo">
+          <img src="./assets/logo.svg" alt="Logo" />
+        </div>
+        <div id="burger-close-btn">
+          <img src="./assets/exit-btn-burger.svg" />
+        </div>
+      </div>
+      <div class="burger-language">
+        <p class="burger-language--active">DE</p>
+        <p>|</p>
+        <p class="burger-language">EN</p>
+      </div>
+      <div class="burger-menu-content">
+        <div class="burger-menu-socials">
+          <p class="burger-menu-socials-text">FOLLOW US:</p>
+          <div class="burger-menu-socials-list">
+            <img src="./assets/Group 25.svg" />
+          </div>
+        </div>
+
+        <div class="burger-list">
+          <div class="burger-list-item">HOME</div>
+          <div class="burger-list-item">OUR WORK</div>
+          <div class="burger-list-item burger-list-item--active">
+            BUSINESS AREAS
+          </div>
+          <div class="burger-list-item">WHO WE ARE</div>
+          <div class="burger-list-item">DAN GROUP MEMBERS</div>
+          <div class="burger-list-item">DAN INSIDE</div>
+          <div class="burger-list-item">CONTACT</div>
+        </div>
+      </div>
+    </div>
     <section class="section expertise-section">
       <div class="expertise-content expertise-content-retail">
         <div class="expertise-text expertise-text-retail">
@@ -285,5 +318,6 @@
       </div>
     </footer>
   </body>
+  <script src="./burgerMenu.js"></script>
   <script src="/accordion.js"></script>
 </html>
