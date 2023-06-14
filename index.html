@@ -1,5 +1,6 @@
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,403 +10,557 @@
     <link rel="stylesheet" href="./index.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-  </head>
-  <body> 
+</head>
+
+<body>
     <header class="header">
-      <div class="header__logo">
-        <img src="./assets/logo.svg" alt="Logo" />
-      </div>
-      <div class="header__menu">
-        <button class="header__search">
-          <img src="./assets/search-icon.svg" />
+        <div class="header__logo">
+            <svg id="Group_1278" data-name="Group 1278" xmlns="http://www.w3.org/2000/svg" width="337.283" height="49.648" viewBox="0 0 337.283 49.648">
+                <path id="Path_313" data-name="Path 313" d="M324.327,2.229c-10.719-5.344-25.047-.793-30.107,10.594-4.677,10.52,1.155,22.02,9.517,25.644,8.294,3.6,7.674,8.681,7.49,9.889a10.006,10.006,0,0,1-.257,1.292,32.583,32.583,0,0,0,23.85-16.054A23.387,23.387,0,0,0,324.327,2.229M307.982,18.213,312.7,32.89l-.4.644-13.784-10.9Zm10.57-11.135-3.035,31.534L314.292,37.6l-4.1-27.082Zm13.276,15.459-.556.167-3.884-1.459-6.423,10.216L317.276,32.6,320.7,10.12Z" fill="#fff"/>
+                <path id="Path_314" data-name="Path 314" d="M7.57,26.523a4.416,4.416,0,0,0,4.711,4.63,4.416,4.416,0,0,0,4.711-4.63,4.49,4.49,0,0,0-4.711-4.672A4.491,4.491,0,0,0,7.57,26.523m9.181,8.013H16.67a7.252,7.252,0,0,1-6.242,2.979C4.307,37.515,0,32.4,0,26.483S4.228,15.489,10.348,15.489a8.429,8.429,0,0,1,6.4,2.7V3.408H24.08V36.832H16.751Z" fill="#fff"/>
+                <path id="Path_315" data-name="Path 315" d="M32.669,26.523a4.417,4.417,0,0,0,4.711,4.631,4.416,4.416,0,0,0,4.711-4.631,4.488,4.488,0,0,0-4.711-4.67,4.489,4.489,0,0,0-4.711,4.67m16.51,10.309H41.85v-2.3h-.081a7.253,7.253,0,0,1-6.241,2.981c-6.122,0-10.43-5.114-10.43-11.034s4.229-10.994,10.349-10.994a8.427,8.427,0,0,1,6.4,2.7V16.175h7.329Z" fill="#fff"/>
+                <path id="Path_316" data-name="Path 316" d="M58.78,18.831h.081a7.144,7.144,0,0,1,6.6-3.342c5.557,0,7.772,3.5,7.772,8.578V36.831H65.908V26.764c0-1.972.321-5.436-3.3-5.436-2.979,0-3.825,2.214-3.825,4.792V36.831H51.451V16.174H58.78Z" fill="#fff"/>
+                <path id="Path_317" data-name="Path 317" d="M94.7,26.523a4.712,4.712,0,0,0,9.423,0,4.712,4.712,0,0,0-9.423,0m.242-8.013h.081a7.334,7.334,0,0,1,6.242-3.02c6.161,0,10.428,5.154,10.428,11.073,0,5.961-4.228,10.953-10.348,10.953a8.452,8.452,0,0,1-6.4-2.657V47.141H87.612V16.174h7.329Z" fill="#fff"/>
+                <path id="Path_318" data-name="Path 318" d="M128.8,23.5a4.4,4.4,0,0,0-8.5,0Zm6.8,4.228H120.183c0,2.981,1.57,4.591,4.591,4.591a3.663,3.663,0,0,0,3.5-1.892h7.047a8.431,8.431,0,0,1-3.906,5.356,12.642,12.642,0,0,1-6.6,1.73c-6.846,0-11.961-3.865-11.961-10.993,0-6.885,4.711-11.033,11.436-11.033,7.169,0,11.316,4.429,11.316,11.476Z" fill="#fff"/>
+                <path id="Path_319" data-name="Path 319" d="M144.357,26.523a4.712,4.712,0,0,0,9.422,0,4.711,4.711,0,0,0-9.422,0m16.51,10.309h-7.329v-2.3h-.081a7.253,7.253,0,0,1-6.241,2.981c-6.12,0-10.43-5.114-10.43-11.034s4.229-10.994,10.349-10.994a8.427,8.427,0,0,1,6.4,2.7V16.175h7.329Z" fill="#fff"/>
+                <path id="Path_320" data-name="Path 320" d="M170.468,19.556h.081a7.177,7.177,0,0,1,6.684-3.665h1.41v7.048a5.94,5.94,0,0,0-3.1-.684c-4.068,0-5.074,2.7-5.074,6.24v8.336h-7.329V16.174h7.329Z" fill="#fff"/>
+                <rect id="Rectangle_546" data-name="Rectangle 546" width="7.329" height="33.423" transform="translate(180.472 3.408)" fill="#fff"/>
+                <path id="Path_321" data-name="Path 321" d="M197.361,18.751h.081a7.644,7.644,0,0,1,6.524-3.263,7.559,7.559,0,0,1,7.046,3.948,7.891,7.891,0,0,1,7.008-3.948c5.234,0,7.046,3.423,7.046,8.175V36.832h-7.328V26.966c0-2.135.08-5.637-3.021-5.637-3.383,0-3.5,3.18-3.5,5.637v9.866h-7.329V26.966c0-2.3,0-5.8-3.263-5.8s-3.261,3.5-3.261,5.8v9.866h-7.329V16.174h7.329Z" fill="#fff"/>
+                <path id="Path_322" data-name="Path 322" d="M233.27,26.523a4.712,4.712,0,0,0,9.422,0,4.711,4.711,0,0,0-9.422,0m16.51,10.309h-7.329v-2.3h-.081a7.253,7.253,0,0,1-6.241,2.981c-6.12,0-10.429-5.114-10.429-11.034s4.228-10.994,10.348-10.994a8.427,8.427,0,0,1,6.4,2.7V16.175h7.329Z" fill="#fff"/>
+                <path id="Path_323" data-name="Path 323" d="M259.382,18.831h.08a7.144,7.144,0,0,1,6.6-3.342c5.557,0,7.772,3.5,7.772,8.578V36.831h-7.328V26.764c0-1.972.321-5.436-3.3-5.436-2.979,0-3.824,2.214-3.824,4.792V36.831h-7.33V16.174h7.33Z" fill="#fff"/>
+              </svg>
+        </div>
+        <div class="header__menu">
+            <button class="header__search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34.627" height="34.493" viewBox="0 0 34.627 34.493">
+                    <g id="Group_1279" data-name="Group 1279" transform="translate(-1698.766 -6.648)">
+                      <circle id="Ellipse_8" data-name="Ellipse 8" cx="10.583" cy="10.583" r="10.583" transform="translate(1700.766 8.648)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
+                      <line id="Line_11" data-name="Line 11" x2="12.86" y2="12.86" transform="translate(1719.118 26.867)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
+                    </g>
+                  </svg>
         </button>
-        <button id="header__burger">
-          <img src="./assets/burger-icon.svg" />
+            <button id="header__burger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="53" height="31" viewBox="0 0 53 31">
+                    <g id="Group_1278" data-name="Group 1278" transform="translate(-1786.247 -8.648)">
+                      <rect id="Rectangle_547" data-name="Rectangle 547" width="53" height="5" transform="translate(1786.247 34.648)" fill="#fff"/>
+                      <rect id="Rectangle_548" data-name="Rectangle 548" width="53" height="5" transform="translate(1786.247 21.648)" fill="#fff"/>
+                      <rect id="Rectangle_549" data-name="Rectangle 549" width="53" height="5" transform="translate(1786.247 8.648)" fill="#fff"/>
+                    </g>
+                  </svg>
         </button>
-      </div>
+        </div>
     </header>
     <div id="burger-menu">
-      <div class="burger-header">
-        <div class="header__logo">
-          <img src="./assets/logo.svg" alt="Logo" />
-        </div>
-        <div id="burger-close-btn">
+        <div class="burger-header">
+            <div class="header__logo">
+                <img src="./assets/logo.svg" alt="Logo" />
+            </div>
+            <div id="burger-close-btn">
 
-          <img src="./assets/exit-btn-burger.svg"/>
+                <img src="./assets/exit-btn-burger.svg" />
+            </div>
         </div>
-      </div>
-      <div class="burger-language">
-        <p class="burger-language--active">DE</p>
-          <p>|</p>
-          <P class="burger-language">EN</P>
-      </div>
-      <div class="burger-menu-content">
-        <div class="burger-menu-socials">
-          <p class="burger-menu-socials-text">
-            FOLLOW US:
-          </p>
-          <div class="burger-menu-socials-list">
-            <img src="./assets/Group 25.svg"/>
-          </div>
-
+        <div class="burger-language">
+            <p class="burger-language--active">DE</p>
+            <p>|</p>
+            <P class="burger-language">EN</P>
         </div>
+        <div class="burger-menu-content">
+            <div class="burger-menu-socials">
+                <p class="burger-menu-socials-text">
+                    FOLLOW US:
+                </p>
+                <div class="burger-menu-socials-list">
+                    <img src="./assets/Group 25.svg" />
+                </div>
 
-        <div class="burger-list">
-  
-          <div class="burger-list-item ">HOME</div>
-          <div class="burger-list-item ">OUR WORK</div>
-          <div class="burger-list-item burger-list-item--active">BUSINESS AREAS</div>
-          <div class="burger-list-item ">WHO WE ARE</div>
-          <div class="burger-list-item ">DAN GROUP MEMBERS</div>
-          <div class="burger-list-item ">DAN INSIDE</div>
-          <div class="burger-list-item ">CONTACT</div>
-      </div>
-      </div>
+            </div>
+
+            <div class="burger-list">
+
+                <div class="burger-list-item ">HOME</div>
+                <div class="burger-list-item ">OUR WORK</div>
+                <div class="burger-list-item burger-list-item--active">BUSINESS AREAS</div>
+                <div class="burger-list-item ">WHO WE ARE</div>
+                <div class="burger-list-item ">DAN GROUP MEMBERS</div>
+                <div class="burger-list-item ">DAN INSIDE</div>
+                <div class="burger-list-item ">CONTACT</div>
+            </div>
+        </div>
     </div>
     <section class="hero-container">
-      <div class="hero__content">
-        <h1 class="hero__title">
-          We turn brands into experiences and experiences into brands.
-        </h1>
-      </div>
+        <div class="hero__content">
+            <h1 class="hero__title">
+                We turn brands into experiences and experiences into brands.
+            </h1>
+        </div>
     </section>
     <section class="section expertise-section">
-      <div class="expertise-content">
-        <div class="expertise-text">
-          <h2>
-            RETAIL<br />
-            EXPERIENCES
-          </h2>
-          <p>
-            Wir initiieren und moderieren mit agilen Prozessen den Wandel im
-            Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen,
-            innovative Formate zu entwickeln und ganzheitliche,
-            kanalübergreifende Lösungen umzusetzen.
-          </p>
-        </div>
-        <!-- <div class="expertise-section-list">
-            <button class="expertise-btn--active">RETAIL</button>
-            <button>BRAND</button>
-            <button>LEISURE</button>
-            <button>COMMUNICATION</button>
-            <button>CROSS REALITY</button>
-            <button>WORK</button>
-          </div>
-        </div> -->
-      </div>
+        <section class="first" id="retail">
+            <div class="outer">
+                <div class="inner">
+                    <div class="bg one">
+                        <img class="expertise-section-gradient" src="./assets/blackgradient.png" />
+                        <div class="expertise-text">
+                            <h2 class="section-heading">
+                                RETAIL<br /> EXPERIENCES
+                            </h2>
+                            <p>
+                                Wir initiieren und moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate zu entwickeln und ganzheitliche, kanalübergreifende Lösungen umzusetzen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- <button class="skip-down-btn">
-        <img src="./assets/skip-down-btn.svg" />
-      </button> -->
-      <div class="expertise-background">
-        <img
-          class="expertise-section-gradient"
-          src="./assets/blackgradient.png"
-        />
-        <img
-        class="expertise-section-gradient-mb"
-        src="./assets/black.png"
-      />
-        <div class="expertise-img-container">
-          <img src="./assets//retailor-img.png" />
-        </div>
-      </div>
-      <div class="expertise-section-list">
-        <button class="expertise-btn--active">RETAIL</button>
-        <button>BRAND</button>
-        <button>LEISURE</button>
-        <button>COMMUNICATION</button>
-        <button>CROSS REALITY</button>
-        <button>WORK</button>
-      </div>
-      <button class="skip-down-btn skip-down-btn-mobile">
-        <img src="./assets/skip-down-btn.svg" />
-      </button>
+        </section>
+        <section class="second" id="brand">
+            <div class="outer">
+                <div class="inner">
 
-    </div>
+                    <div class="bg">
+                        <img class="expertise-section-gradient" src="./assets/blackgradient.png" />
+                        <div class="expertise-text">
+                            <h2 class="section-heading">
+                                BRAND
+                            </h2>
+                            <p>
+                                Wir initiieren und moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate zu entwickeln und ganzheitliche, kanalübergreifende Lösungen umzusetzen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="third" id="leisure">
+            <div class="outer">
+                <div class="inner">
+
+                    <div class="bg">
+                        <img class="expertise-section-gradient" src="./assets/blackgradient.png" />
+                        <div class="expertise-text">
+                            <h2 class="section-heading">
+                                LEISURE
+                            </h2>
+                            <p>
+                                Wir initiieren und moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate zu entwickeln und ganzheitliche, kanalübergreifende Lösungen umzusetzen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fourth" id="communication">
+            <div class="outer">
+                <div class="inner">
+
+                    <div class="bg">
+                        <img class="expertise-section-gradient" src="./assets/blackgradient.png" />
+                        <div class="expertise-text">
+                            <h2 class="section-heading">
+                                COMMUNICATION
+                            </h2>
+                            <p>
+                                Wir initiieren und moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate zu entwickeln und ganzheitliche, kanalübergreifende Lösungen umzusetzen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fifth" id="cross-reality">
+            <div class="outer">
+                <div class="inner">
+
+                    <div class="bg">
+                        <img class="expertise-section-gradient" src="./assets/blackgradient.png" />
+                        <div class="expertise-text">
+                            <h2 class="section-heading">
+                                CROSS REALITY
+                            </h2>
+                            <p>
+                                Wir initiieren und moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate zu entwickeln und ganzheitliche, kanalübergreifende Lösungen umzusetzen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sixth" id="work">
+            <div class="outer">
+                <div class="inner">
+
+                    <div class="bg">
+                        <img class="expertise-section-gradient" src="./assets/blackgradient.png" />
+                        <div class="expertise-text">
+                            <h2 class="section-heading">
+                                WORK
+                            </h2>
+                            <p>
+                                Wir initiieren und moderieren mit agilen Prozessen den Wandel im Retail. Wir helfen Ihnen, Kundenbedürfnisse rechtzeitig zu erkennen, innovative Formate zu entwickeln und ganzheitliche, kanalübergreifende Lösungen umzusetzen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="expertise-section-list">
+            <a href="#retail" class="expertise-btn--active" data-slide="1">RETAIL</a>
+            <a href="#brand" data-slide="2">BRAND</a>
+            <a href="#leisure" data-slide="3">LEISURE</a>
+            <a href="#communication" data-slide="4">COMMUNICATION</a>
+            <a href="#cross-reality" data-slide="5">CROSS REALITY</a>
+            <a href="#work" data-slide="6">WORK</a>
+        </div>
+        <button class="skip-down-btn ">
+    <img src="./assets/skip-down-btn.svg " />
+  </button>
     </section>
-    <section class="section work-section">
-      <div class="work-list">
-        <div class="work-item">
-          <img src="./assets/gerryweber-img.png" />
-          <div class="work-item-text">
-            <h5>GERRY WEBER</h5>
-            <p>NEW STORE</p>
-          </div>
+    <section class="section work-section ">
+        <div class="work-list ">
+            <div class="work-item ">
+                <div class="outer-work">
+                    <div class="inner-work">
+                        <img src="./assets/gerryweber-img.png " />
+                        <div class="work-item-text ">
+                            <h5>GERRY WEBER</h5>
+                            <p>NEW STORE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="work-item ">
+                <div class="outer-work">
+                    <div class="inner-work">
+                        <img src="./assets/zooberlin-img.png " />
+                        <div class="work-item-text ">
+                            <h5>ZOO BERLIN</h5>
+                            <p>PANDA GARDEN</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="work-item ">
+                <div class="outer-work">
+                    <div class="inner-work">
+                        <img src="./assets/misterspex-img.png " />
+                        <div class="work-item-text ">
+                            <h5>MISTER SPEX</h5>
+                            <p>NEW STORE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="work-item ">
+                <div class="outer-work">
+                    <div class="inner-work">
+                        <img src="./assets/whatalocation-img.png " />
+                        <div class="work-item-text ">
+                            <h5>BRAND STRATEGY</h5>
+                            <p>WHATALOCATION</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="work-item">
-          <img src="./assets/zooberlin-img.png" />
-          <div class="work-item-text">
-            <h5>ZOO BERLIN</h5>
-            <p>PANDA GARDEN</p>
-          </div>
+        <div class="work-section-title ">
+            <h3>
+                SOME<br /> OF OUR WORK
+            </h3>
         </div>
-        <div class="work-item">
-          <img src="./assets/misterspex-img.png" />
-          <div class="work-item-text">
-            <h5>MISTER SPEX</h5>
-            <p>NEW STORE</p>
-          </div>
-        </div>
-        <div class="work-item">
-          <img src="./assets/whatalocation-img.png" />
-          <div class="work-item-text">
-            <h5>BRAND STRATEGY</h5>
-            <p>WHATALOCATION</p>
-          </div>
-        </div>
-      </div>
-      <div class="work-section-title">
-        <h3>
-          SOME<br />
-          OF OUR<br/> WORK
-        </h3>
-      </div>
     </section>
-    <section class="section section-agencies">
-      <h4 class="agencies-title">
-        We aRE A network OF</br> strategic creative agencies
-      </h4>
-      <div class="agencies-list">
-        <div class="agencies-list-item">
-          
-          <div class="agency-gradient">
-          </div>
-          <img src="./assets/gerryweber-img-2.png"/>
-          <div class="agency-text">
-            <p>DAN PEARLMAN</p>
-            <h5>
-              MARKENARCHITEKTUR
-            </h5>
-          </div>
-        </div>
-        <div class="agencies-list-item">
-          
-          <div class="agency-gradient">
-          </div>
-          <img src="./assets/zooberlin-img.png"/>
-          <div class="agency-text">
-            <p>DAN PEARLMAN</p>
-            <h5>
-              ERLEBNISARCHITEKTUR
-            </h5>
-          </div>
-        </div>
+    <section class="section section-agencies ">
+        <h4 class="agencies-title ">
+            We aRE A network OF</br> strategic creative agencies
+        </h4>
+        <div class="agencies-list swiper ">
+            <div class="swiper-wrapper ">
+                <div class="agencies-list-item swiper-slide ">
 
-        <div class="agencies-list-item">
-          
-          <div class="agency-gradient">
-          </div>
-          <img src="./assets/dpx.png"/>
-          <div class="agency-text">
-            <h5>
-              DPX
-            </h5>
-          </div>
+                    <div class="agency-gradient ">
+                    </div>
+                    <img src="./assets/gerryweber-img-2.png " />
+                    <div class="agency-text ">
+                        <p>DAN PEARLMAN</p>
+                        <h5>
+                            MARKENARCHITEKTUR
+                        </h5>
+                    </div>
+                </div>
+                <div class="agencies-list-item swiper-slide ">
+
+                    <div class="agency-gradient ">
+                    </div>
+                    <img src="./assets/zooberlin-img.png " />
+                    <div class="agency-text ">
+                        <p>DAN PEARLMAN</p>
+                        <h5>
+                            ERLEBNISARCHITEKTUR
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="agencies-list-item swiper-slide ">
+
+                    <div class="agency-gradient ">
+                    </div>
+                    <img src="./assets/dpx.png " />
+                    <div class="agency-text ">
+                        <h5>
+                            DPX
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="agencies-list-item swiper-slide ">
+
+                    <div class="agency-gradient ">
+                    </div>
+                    <img src="./assets/spring-brand-ideas.png " />
+                    <div class="agency-text ">
+                        <h5>
+                            SPRING BRAND IDEAS
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="agencies-list-item swiper-slide ">
+
+                    <div class="agency-gradient ">
+                    </div>
+                    <img src="./assets/memade.png " />
+                    <div class="agency-text ">
+                        <h5>
+                            ME MADE
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <div class="agencies-list-item">
-          
-          <div class="agency-gradient">
-          </div>
-          <img src="./assets/spring-brand-ideas.png"/>
-          <div class="agency-text">
-            <h5>
-              SPRING BRAND IDEAS
-            </h5>
-          </div>
-        </div>
-
-        <div class="agencies-list-item">
-          
-          <div class="agency-gradient">
-          </div>
-          <img src="./assets/memade.png"/>
-          <div class="agency-text">
-            <h5>
-              ME MADE
-            </h5>
-          </div>
-        </div>
-
-
-      </div>
     </section>
-    <section class="section">
+    <section class="section cards-slider ">
+        <div class="cards-container ">
+            <div class="card card1 active" id="1">
+                <div class="card-inner">
+                    <div class="card-title">COMPETENCE FOR KIDS </div>
+                    <a href="#">READ MORE</a>
+                </div>
 
+            </div>
+            <div class="card card2" id="2">
+                <div class="card-bg-blur"></div>
+                <div class="card-inner">
+                    <div class="card-title">HEALTHCARE </div>
+                    <div class="card-label">HEALTHCARE</div>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+            <div class="card card3" id="3">
+                <div class="card-bg-blur"></div>
+                <div class="card-inner">
+                    <div class="card-title">EMPLOYER BRANDING </div>
+                    <div class="card-label">EMPLOYER BRANDING</div>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+            <div class="card card4" id="4">
+                <div class="card-bg-blur"></div>
+                <div class="card-inner">
+                    <div class="card-title">WORK SPACES </div>
+                    <div class="card-label">WORK SPACES</div>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+            <!-- <div class="card card4" style=" z-index: 5;" id="4">
+              <img src="./assets/competence-for-kids.png " alt=" ">
+          </div> -->
+            <div class="arrows">
+                <img class="arrow-up" src="./assets/icons8-up-arrow-100.png" alt="">
+                <img class="arrow-down" src="./assets/icons8-down-100.png" alt="">
+            </div>
+        </div>
     </section>
     <section class="section journal-section">
-      <h4>JOURNAL (CHANGE)</h4>
-      <div class="journal-container">
-        <div class="journal-item">
-          <div class="journal-item-text">
-            <h5>RED DOT FOR</br>
-              SARTORIUS</h5>
-            <p>NEWS</p>
-          </div>
-          <img src="./assets/sartorious-red-dot.png"/>
+        <h4>JOURNAL (CHANGE)</h4>
+        <div class="journal-container">
+            <div class="journal-item">
+                <div class="journal-item-text">
+                    <h5>RED DOT FOR</br>
+                        SARTORIUS</h5>
+                    <p>NEWS</p>
+                </div>
+                <img src="./assets/sartorious-red-dot.png" />
+            </div>
+            <div class="journal-item">
+                <div class="journal-item-text">
+                    <h5>OBJECTS OF DESIRE</br>
+                        EDITION 2022</h5>
+                    <p>COLLECTIVE</p>
+                </div>
+                <img src="./assets/objects-of-desire.png" />
+            </div>
+            <div class="journal-item">
+                <div class="journal-item-text">
+                    <h5>BRAND AWARD</br>
+                        MISTER SPEX</h5>
+                    <p>BLOG</p>
+                </div>
+                <img src="./assets/brand-award.png" />
+            </div>
         </div>
-        <div class="journal-item">
-          <div class="journal-item-text">
-            <h5>OBJECTS OF DESIRE</br>
-              EDITION 2022</h5>
-            <p>COLLECTIVE</p>
-          </div>
-          <img src="./assets/objects-of-desire.png"/>
-        </div>
-        <div class="journal-item">
-          <div class="journal-item-text">
-            <h5>BRAND AWARD</br>
-              MISTER SPEX</h5>
-            <p>BLOG</p>
-          </div>
-          <img src="./assets/brand-award.png"/>
-        </div>
-      </div>
     </section>
     <section class="section section-create">
         <h5>LET’S CREATE </br>
-          A BETTER FUTURE</br>
-          TOGETHER.</h5>
-          <div class="section-create-buttons">
+            A BETTER FUTURE</br>
+            TOGETHER.</h5>
+        <div class="section-create-buttons">
             <button class="section-create-btn">
               CAREER
             </button>
             <button class="section-create-btn">
               GET IN TOUCH
             </button>
-          </div>
+        </div>
 
     </section>
     <section class="newsletter-section">
-      <h5>STAY WITH US</h5>
-      <div class="newsletter-input-container">
-        <input type="email" placeholder="Email address"/>
-        <button>Sign up</button>
-      </div>
+        <h5>STAY WITH US</h5>
+        <div class="newsletter-input-container">
+            <input type="email" placeholder="Email address" />
+            <button>Sign up</button>
+        </div>
     </section>
     <footer>
-      <div class="footer-nav-container">
-        <div class="footer-nav-section">
-          <p class="footer-nav-section-title">
-            THE FUTURE OF
-          </p>
-          <div class="footer-nav-section-list">
-            <a href="#">
+        <div class="footer-nav-container">
+            <div class="footer-nav-section">
+                <p class="footer-nav-section-title">
+                    THE FUTURE OF
+                </p>
+                <div class="footer-nav-section-list">
+                    <a href="#">
               Brands
             </a>
-            <a href="#">
+                    <a href="#">
               Work
             </a>
-            <a href="#">
+                    <a href="#">
               Leisure
             </a>
-            <a href="#">
+                    <a href="#">
               Places
             </a>
-            <a href="#">
+                    <a href="#">
               Retail
             </a>
-            <a href="#">
+                    <a href="#">
               Communication
             </a>
-            <a href="#">
+                    <a href="#">
               Experiences
             </a>
-          </div>
-        </div>
-        <div class="footer-nav-section">
-          <p class="footer-nav-section-title">
-            ABOUT DAN
-          </p>
-          <div class="footer-nav-section-list">
-            <a href="#">
+                </div>
+            </div>
+            <div class="footer-nav-section">
+                <p class="footer-nav-section-title">
+                    ABOUT DAN
+                </p>
+                <div class="footer-nav-section-list">
+                    <a href="#">
               About us
             </a>
-            <a href="#">
+                    <a href="#">
               Planet, People, Profit
             </a>
-            <a href="#">
+                    <a href="#">
               4 D's
             </a>
-            <a href="#">
+                    <a href="#">
               Clients
             </a>
-            <a href="#">
+                    <a href="#">
               Projects
             </a>
-          </div>
-        </div>
-        <div class="footer-nav-section">
-          <p class="footer-nav-section-title">
-            DAN GROUP MEMBERS
-          </p>
-          <div class="footer-nav-section-list">
-            <a href="#">
+                </div>
+            </div>
+            <div class="footer-nav-section">
+                <p class="footer-nav-section-title">
+                    DAN GROUP MEMBERS
+                </p>
+                <div class="footer-nav-section-list">
+                    <a href="#">
               dan pearlman brand architecture 
             </a>
-            <a href="#">
+                    <a href="#">
               dan pearlman experience architecture 
             </a>
-            <a href="#">
+                    <a href="#">
               dpx. Strategies for a better tomorrow. 
             </a>
-            <a href="#">
+                    <a href="#">
               Memade 
             </a>
-            <a href="#">
+                    <a href="#">
               spring brand ideas 
             </a>
-            <a href="#">
+                    <a href="#">
               BEAM cross realities 
             </a>
-          </div>
-        </div>
-        <div class="footer-nav-section">
-          <p class="footer-nav-section-title">
-            DAN INSIDE
-          </p>
-          <div class="footer-nav-section-list">
-            <a href="#">
+                </div>
+            </div>
+            <div class="footer-nav-section">
+                <p class="footer-nav-section-title">
+                    DAN INSIDE
+                </p>
+                <div class="footer-nav-section-list">
+                    <a href="#">
               The latest
             </a>
-            <a href="#">
+                    <a href="#">
               The collective
             </a>
-            <a href="#">
+                    <a href="#">
               Dan Experts
             </a>
-            <a href="#">
+                    <a href="#">
               Object of desire Memade 
             </a>
-            <a href="#">
+                    <a href="#">
               Career
             </a>
-            <a href="#">
+                    <a href="#">
               Blog 
             </a>
-          </div>
+                </div>
+            </div>
+            <div class="footer-nav-section">
+                <p class="footer-nav-section-title">
+                    CONTACT US
+                </p>
+            </div>
         </div>
-        <div class="footer-nav-section">
-          <p class="footer-nav-section-title">
-            CONTACT US
-          </p>
+        <div class="footer-bottom">
+            <div class="footer-email">danpearlman.com</div>
+            <div class="footer-copyright">
+                <p>Copyright 2022 dan pearlman GmbH. All Rights Reserved.</p>
+                <p>We are a business located in different parts of the world. Our team is working remotely</p>
+            </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-          <div class="footer-email">danpearlman.com</div>
-          <div class="footer-copyright">
-            <p>Copyright 2022 dan pearlman GmbH. All Rights Reserved.</p>
-            <p>We are a business located in different parts of the world. Our team is working remotely</p>
-          </div>
-      </div>
-      <div class="footer-mobile-nav">
-        <div class="footer-dropdown">
+        <div class="footer-mobile-nav">
+            <div class="footer-dropdown">
 
+            </div>
         </div>
-      </div>
     </footer>
+    <script src="./gsap/gsap.min.js "></script>
+    <script src="./gsap/ScrollTrigger.min.js "></script>
+    <script src="./gsap/ScrollSmoother.min.js "></script>
+    <script src="./gsap/ScrollToPlugin.min.js "></script>
+    <script src="./gsap/CustomEase.min.js "></script>
+    <script src="./gsap/SplitText.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js "></script>
     <script src="./gsapAnimations.js"></script>
     <script src="./burgerMenu.js"></script>
-  </body>
+</body>
+
 </html>
