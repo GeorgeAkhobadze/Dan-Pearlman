@@ -63,408 +63,415 @@ const parentSplit1 = new SplitText(".section-create h5", {
     linesClass: "split-parent1"
 });
 
+function myFunction(x) {
+    if (!x.matches) {
+        const nav = document.querySelectorAll(".expertise-section-list a");
 
+        let sections = document.querySelectorAll(".expertise-section section"),
+            images = document.querySelectorAll(".bg"),
+            headings = gsap.utils.toArray(".section-heading"),
+            outerWrappers = gsap.utils.toArray(".outer"),
+            innerWrappers = gsap.utils.toArray(".inner"),
+            splitHeadings = headings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" })),
+            currentIndex = -1,
+            wrap = gsap.utils.wrap(0, sections.length),
+            animating;
 
+        gsap.set(outerWrappers, { yPercent: 100 });
+        gsap.set(innerWrappers, { yPercent: -100 });
 
-//const panels = gsap.utils.toArray(".expertise-content");
-const nav = document.querySelectorAll(".expertise-section-list a");
+        function gotoSection(index, direction) {
+            index = wrap(index);
+            animating = true;
+            let fromTop = direction === -1,
+                dFactor = fromTop ? -1 : 1,
+                tl = gsap.timeline({
+                    defaults: { duration: 0.8, ease: "power1.inOut" },
+                    onComplete: () => animating = false
+                });
+            if (currentIndex >= 0) {
 
-let sections = document.querySelectorAll(".expertise-section section"),
-    images = document.querySelectorAll(".bg"),
-    headings = gsap.utils.toArray(".section-heading"),
-    outerWrappers = gsap.utils.toArray(".outer"),
-    innerWrappers = gsap.utils.toArray(".inner"),
-    splitHeadings = headings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" })),
-    currentIndex = -1,
-    wrap = gsap.utils.wrap(0, sections.length),
-    animating;
-
-gsap.set(outerWrappers, { yPercent: 100 });
-gsap.set(innerWrappers, { yPercent: -100 });
-
-function gotoSection(index, direction) {
-    index = wrap(index);
-    animating = true;
-    let fromTop = direction === -1,
-        dFactor = fromTop ? -1 : 1,
-        tl = gsap.timeline({
-            defaults: { duration: 0.8, ease: "power1.inOut" },
-            onComplete: () => animating = false
-        });
-    if (currentIndex >= 0) {
-
-        gsap.set(sections[currentIndex], { zIndex: 0 });
-        tl.to(images[currentIndex], { yPercent: -15 * dFactor })
-            .set(sections[currentIndex], { autoAlpha: 0 });
-    }
-    if (!fromTop) {
-        nav.forEach(el => el.classList.remove("expertise-btn--active"));
-        nav[index].classList.add("expertise-btn--active");
-        index !== 0 && nav[index - 1].classList.remove("expertise-btn--active");
-    } else {
-        nav.forEach(el => el.classList.remove("expertise-btn--active"));
-        nav[index].classList.add("expertise-btn--active");
-        index !== 5 && nav[index + 1].classList.remove("expertise-btn--active");
-    }
-
-    // if (index === 5) {
-    //     menuClick(".work-section");
-    // }
-    gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
-    tl.fromTo([outerWrappers[index], innerWrappers[index]], {
-            yPercent: i => i ? -100 * dFactor : 100 * dFactor
-        }, {
-            yPercent: 0
-        }, 0)
-        .fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0)
-        .fromTo(splitHeadings[index].chars, {
-            autoAlpha: 0,
-            yPercent: 300 * dFactor,
-            opacity: 0
-        }, {
-            autoAlpha: 1,
-            yPercent: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2",
-            stagger: {
-                each: 0.03,
-                from: "random"
+                gsap.set(sections[currentIndex], { zIndex: 0 });
+                tl.to(images[currentIndex], { yPercent: -15 * dFactor })
+                    .set(sections[currentIndex], { autoAlpha: 0 });
             }
-        }, 0.2);
+            if (!fromTop) {
+                nav.forEach(el => el.classList.remove("expertise-btn--active"));
+                nav[index].classList.add("expertise-btn--active");
+                index !== 0 && nav[index - 1].classList.remove("expertise-btn--active");
+            } else {
+                nav.forEach(el => el.classList.remove("expertise-btn--active"));
+                nav[index].classList.add("expertise-btn--active");
+                index !== 5 && nav[index + 1].classList.remove("expertise-btn--active");
+            }
 
-    currentIndex = index;
-}
+            // if (index === 5) {
+            //     menuClick(".work-section");
+            // }
+            gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
+            tl.fromTo([outerWrappers[index], innerWrappers[index]], {
+                    yPercent: i => i ? -100 * dFactor : 100 * dFactor
+                }, {
+                    yPercent: 0
+                }, 0)
+                .fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0)
+                .fromTo(splitHeadings[index].chars, {
+                    autoAlpha: 0,
+                    yPercent: 300 * dFactor,
+                    opacity: 0
+                }, {
+                    autoAlpha: 1,
+                    yPercent: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2",
+                    stagger: {
+                        each: 0.03,
+                        from: "random"
+                    }
+                }, 0.2);
 
-
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
-
-function preventDefault(e) {
-    e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
-    }
-}
-
-var supportsPassive = false;
-try {
-    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-        get: function() { supportsPassive = true; }
-    }));
-} catch (e) {}
-
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-
-function disableScroll() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-
-function enableScroll() {
-    console.log("enable")
-    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    window.removeEventListener('touchmove', preventDefault, wheelOpt);
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
+            currentIndex = index;
+        }
 
 
-let last = false;
-let first = false;
-let index = 0;
-const testSection = ScrollTrigger.create({
-    trigger: ".expertise-section",
-    // scrub: true,
-    // start: "top top",
-    // end: "bottom",
-    pin: true,
-    // markers: true,
-    onEnter: () => {
-        Observer.create({
-            type: "wheel,touch,pointer",
-            wheelSpeed: -1,
-            onDown: () => {
-                if (testSection.isActive && currentIndex !== 0) {
-                    !animating && gotoSection(currentIndex - 1, -1);
-                }
-                if (currentIndex >= 0 && currentIndex < 5) {
+        var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
-                    disableScroll();
-                    first = true;
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function() { supportsPassive = true; }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? { passive: false } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
 
-                }
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
 
-            },
-            onUp: () => {
+        function enableScroll() {
+            console.log("enable")
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
 
-                if (testSection.isActive && currentIndex !== 5) {
-                    !animating && gotoSection(currentIndex + 1, 1);
-                    index = 0;
-                }
-                if (currentIndex === 5) {
 
-                    // menuClick(".work-section");
-                    // enableScroll();
-                    last = true;
-                    index++;
+        let last = false;
+        let first = false;
+        let index = 0;
+        const testSection = ScrollTrigger.create({
+            trigger: ".expertise-section",
+            // scrub: true,
+            // start: "top top",
+            // end: "bottom",
+            pin: true,
+            // markers: true,
+            onEnter: () => {
+                Observer.create({
+                    type: "wheel,touch,pointer",
+                    wheelSpeed: -1,
+                    onDown: () => {
+                        if (testSection.isActive && currentIndex !== 0) {
+                            !animating && gotoSection(currentIndex - 1, -1);
+                        }
+                        if (currentIndex >= 0 && currentIndex < 5) {
 
-                }
-                if (currentIndex !== 5) {
-                    last = false;
-                }
-                if (last && index > 1) {
-                    console.log(index)
-                    menuClick(".work-section");
-                    testSection.disble();
-                }
-                console.log(index)
-                    // if (currentIndex === 0) {
-                    //     enableScroll()
-                    // }
-                    // if (last && currentIndex === 0) {
-                    //     currentIndex = 5;
-                    //     menuClick(".work-section");
-                    // }
-            },
-            tolerance: 10,
-            // preventDefault: true
-        });
-        disableScroll();
+                            disableScroll();
+                            first = true;
 
-    },
-    onEnterBack: () => {
-        Observer.create({
-            type: "wheel,touch,pointer",
-            wheelSpeed: -1,
-            onDown: () => {
+
+                        }
+
+                    },
+                    onUp: () => {
+
+                        if (testSection.isActive && currentIndex !== 5) {
+                            !animating && gotoSection(currentIndex + 1, 1);
+                            index = 0;
+                        }
+                        if (currentIndex === 5) {
+
+                            // menuClick(".work-section");
+                            // enableScroll();
+                            last = true;
+                            index++;
+
+                        }
+                        if (currentIndex !== 5) {
+                            last = false;
+                        }
+                        if (last && index > 1) {
+                            console.log(index)
+                            menuClick(".work-section");
+                            testSection.disble();
+                        }
+                        console.log(index)
+                            // if (currentIndex === 0) {
+                            //     enableScroll()
+                            // }
+                            // if (last && currentIndex === 0) {
+                            //     currentIndex = 5;
+                            //     menuClick(".work-section");
+                            // }
+                    },
+                    tolerance: 10,
+                    // preventDefault: true
+                });
                 disableScroll();
-                if (testSection.isActive && currentIndex !== 0) {
-                    !animating && gotoSection(currentIndex - 1, -1);
-                }
-                if (currentIndex >= 0 && currentIndex < 5) {
-
-                    disableScroll();
-                    first = true;
-
-                }
 
             },
-            onUp: () => {
+            onEnterBack: () => {
+                Observer.create({
+                    type: "wheel,touch,pointer",
+                    wheelSpeed: -1,
+                    onDown: () => {
+                        disableScroll();
+                        if (testSection.isActive && currentIndex !== 0) {
+                            !animating && gotoSection(currentIndex - 1, -1);
+                        }
+                        if (currentIndex >= 0 && currentIndex < 5) {
 
-                if (testSection.isActive && currentIndex !== 5) {
-                    !animating && gotoSection(currentIndex + 1, 1);
-                    index = 0;
-                }
-                if (currentIndex === 5) {
-                    // enableScroll();
-                    last = true;
-                    index++;
+                            disableScroll();
+                            first = true;
 
-                }
-                if (currentIndex !== 5) {
-                    last = false;
-                }
-                if (last && index > 1) {
-                    console.log(index)
-                    menuClick(".work-section");
-                    testSection.disble();
-                }
+                        }
+
+                    },
+                    onUp: () => {
+
+                        if (testSection.isActive && currentIndex !== 5) {
+                            !animating && gotoSection(currentIndex + 1, 1);
+                            index = 0;
+                        }
+                        if (currentIndex === 5) {
+                            // enableScroll();
+                            last = true;
+                            index++;
+
+                        }
+                        if (currentIndex !== 5) {
+                            last = false;
+                        }
+                        if (last && index > 1) {
+                            console.log(index)
+                            menuClick(".work-section");
+                            testSection.disble();
+                        }
+                    },
+                    tolerance: 10,
+                    // preventDefault: true
+                });
+                disableScroll();
             },
-            tolerance: 10,
-            // preventDefault: true
+            onLeave: () => {
+                enableScroll();
+                last = false;
+                index = 0;
+            },
+            onLeaveBack: () => {
+                enableScroll();
+                last = false;
+                index = 0;
+                // Observer.disconnect();
+            },
+
         });
-        disableScroll();
-    },
-    onLeave: () => {
-        enableScroll();
-        last = false;
-        index = 0;
-    },
-    onLeaveBack: () => {
-        enableScroll();
-        last = false;
-        index = 0;
-        // Observer.disconnect();
-    },
-
-});
 
 
-gotoSection(0, 1);
+        gotoSection(0, 1);
 
 
 
-gsap.utils.toArray(".expertise-section-list a").forEach((a, index) => {
+        gsap.utils.toArray(".expertise-section-list a").forEach((a, index) => {
 
 
-    a.addEventListener("click", () => {
-        gotoSection(index, 1);
-        nav.forEach(el => el.classList.remove("expertise-btn--active"));
-        nav[index].classList.add("expertise-btn--active");
+            a.addEventListener("click", () => {
+                gotoSection(index, 1);
+                nav.forEach(el => el.classList.remove("expertise-btn--active"));
+                nav[index].classList.add("expertise-btn--active");
 
-    })
-})
-
-
-//////////
+            })
+        })
 
 
-let workSections = document.querySelectorAll(".work-item"),
-    workOuterWrappers = gsap.utils.toArray(".outer-work"),
-    workInnerWrappers = gsap.utils.toArray(".inner-work"),
-    currentIndexWork = -1,
-    wrapWork = gsap.utils.wrap(0, workSections.length),
-    animatingWork;
+        //////////
 
-gsap.set(workOuterWrappers, { yPercent: 100 });
-gsap.set(workInnerWrappers, { yPercent: -100 });
 
-function gotoSectionWork(index, direction) {
-    index = wrapWork(index);
-    animatingWork = true;
-    let fromTop = direction === 1,
-        dFactor = fromTop ? -1 : 1,
-        tl = gsap.timeline({
-            defaults: { duration: 1.25, ease: "power1.inOut" },
-            onComplete: () => animatingWork = false
+        let workSections = document.querySelectorAll(".work-item"),
+            workOuterWrappers = gsap.utils.toArray(".outer-work"),
+            workInnerWrappers = gsap.utils.toArray(".inner-work"),
+            currentIndexWork = -1,
+            wrapWork = gsap.utils.wrap(0, workSections.length),
+            animatingWork;
+
+        gsap.set(workOuterWrappers, { yPercent: 100 });
+        gsap.set(workInnerWrappers, { yPercent: -100 });
+
+        function gotoSectionWork(index, direction) {
+            index = wrapWork(index);
+            animatingWork = true;
+            let fromTop = direction === 1,
+                dFactor = fromTop ? -1 : 1,
+                tl = gsap.timeline({
+                    defaults: { duration: 1.25, ease: "power1.inOut" },
+                    onComplete: () => animatingWork = false
+                });
+            if (currentIndexWork >= 0) {
+
+                gsap.set(workSections[currentIndexWork], { zIndex: 0 });
+
+                tl.set(workSections[currentIndexWork], { autoAlpha: 0 });
+            }
+            // if (index === 3) {
+            //     setTimeout(() => {
+            //         menuClick(".section-agencies");
+            //     }, 2000)
+
+            // }
+            gsap.set(workSections[index], { autoAlpha: 1, zIndex: 1 });
+            tl.fromTo([workOuterWrappers[index], workInnerWrappers[index]], {
+                yPercent: i => i ? -100 * dFactor : 100 * dFactor
+            }, {
+                yPercent: 0
+            }, 0)
+
+
+            currentIndexWork = index;
+        }
+
+
+        let workSectionLast = false;
+        let workSecIndex = 0;
+
+        const workSection = ScrollTrigger.create({
+            trigger: ".work-section",
+            // scrub: true,
+            // start: "top top",
+            // end: "bottom",
+            pin: true,
+            // markers: true,
+
+            onEnter: () => {
+
+                Observer.create({
+                    type: "wheel,touch,pointer",
+                    wheelSpeed: -1,
+                    onDown: () => {
+                        workSectionLast = false;
+                        if (workSection.isActive && currentIndexWork !== 0) {
+                            !animatingWork && gotoSectionWork(currentIndexWork - 1, -1);
+                        }
+                        if (currentIndexWork === 0) {
+                            enableScroll();
+                        }
+                    },
+                    onUp: () => {
+
+                        if (workSection.isActive && currentIndexWork !== 3) {
+                            !animatingWork && gotoSectionWork(currentIndexWork + 1, 1);
+                            workSecIndex = 0;
+                        }
+                        if (currentIndexWork === 3) {
+                            console.log("test")
+                                // enableScroll();
+                            workSectionLast = true;
+                            workSecIndex++;
+                        }
+                        if (currentIndexWork !== 3) {
+                            workSectionLast = false;
+                        }
+                        if (workSectionLast && workSecIndex > 1) {
+                            console.log(workSecIndex)
+                            menuClick(".section-agencies");
+                            workSection.disble();
+                        }
+                    },
+                    tolerance: 10,
+                    // preventDefault: true
+                });
+                disableScroll();
+            },
+            onEnterBack: () => {
+
+                Observer.create({
+                    type: "wheel,touch,pointer",
+                    wheelSpeed: -1,
+                    onDown: () => {
+                        // workSectionLast = false;
+                        if (workSection.isActive && currentIndexWork !== 0) {
+                            !animatingWork && gotoSectionWork(currentIndexWork - 1, -1);
+                        }
+                        if (currentIndexWork === 0) {
+                            enableScroll();
+                        }
+                    },
+                    onUp: () => {
+
+                        if (workSection.isActive && currentIndexWork !== 3) {
+                            !animatingWork && gotoSectionWork(currentIndexWork + 1, 1);
+                            workSecIndex = 0;
+                        }
+                        if (currentIndexWork === 3) {
+                            // enableScroll();
+                            workSectionLast = true;
+                            workSecIndex++;
+                        }
+                        if (currentIndexWork !== 3) {
+                            workSectionLast = false;
+                        }
+                        if (workSectionLast && workSecIndex > 1) {
+                            console.log(index)
+                            menuClick(".section-agencies");
+                            workSection.disble();
+                        }
+                    },
+                    tolerance: 10,
+                    // preventDefault: true
+                });
+
+            },
+            onLeave: () => {
+                enableScroll();
+                workSectionLast = false;
+                workSecIndex = 0;
+
+            },
+            onLeaveBack: () => {
+                enableScroll();
+                workSectionLast = false;
+                workSecIndex = 0;
+                // Observer.disconnect();
+            },
+
         });
-    if (currentIndexWork >= 0) {
-
-        gsap.set(workSections[currentIndexWork], { zIndex: 0 });
-
-        tl.set(workSections[currentIndexWork], { autoAlpha: 0 });
+        gotoSectionWork(0, 1);
     }
-    // if (index === 3) {
-    //     setTimeout(() => {
-    //         menuClick(".section-agencies");
-    //     }, 2000)
-
-    // }
-    gsap.set(workSections[index], { autoAlpha: 1, zIndex: 1 });
-    tl.fromTo([workOuterWrappers[index], workInnerWrappers[index]], {
-        yPercent: i => i ? -100 * dFactor : 100 * dFactor
-    }, {
-        yPercent: 0
-    }, 0)
-
-
-    currentIndexWork = index;
 }
 
+var x = window.matchMedia("(max-width: 992px)");
+myFunction(x);
+x.addListener(myFunction);
+//const panels = gsap.utils.toArray(".expertise-content");
 
-let workSectionLast = false;
-let workSecIndex = 0;
-
-const workSection = ScrollTrigger.create({
-    trigger: ".work-section",
-    // scrub: true,
-    // start: "top top",
-    // end: "bottom",
-    pin: true,
-    // markers: true,
-
-    onEnter: () => {
-
-        Observer.create({
-            type: "wheel,touch,pointer",
-            wheelSpeed: -1,
-            onDown: () => {
-                workSectionLast = false;
-                if (workSection.isActive && currentIndexWork !== 0) {
-                    !animatingWork && gotoSectionWork(currentIndexWork - 1, -1);
-                }
-                if (currentIndexWork === 0) {
-                    enableScroll();
-                }
-            },
-            onUp: () => {
-
-                if (workSection.isActive && currentIndexWork !== 3) {
-                    !animatingWork && gotoSectionWork(currentIndexWork + 1, 1);
-                    workSecIndex = 0;
-                }
-                if (currentIndexWork === 3) {
-                    console.log("test")
-                        // enableScroll();
-                    workSectionLast = true;
-                    workSecIndex++;
-                }
-                if (currentIndexWork !== 3) {
-                    workSectionLast = false;
-                }
-                if (workSectionLast && workSecIndex > 1) {
-                    console.log(workSecIndex)
-                    menuClick(".section-agencies");
-                    workSection.disble();
-                }
-            },
-            tolerance: 10,
-            // preventDefault: true
-        });
-        disableScroll();
-    },
-    onEnterBack: () => {
-
-        Observer.create({
-            type: "wheel,touch,pointer",
-            wheelSpeed: -1,
-            onDown: () => {
-                // workSectionLast = false;
-                if (workSection.isActive && currentIndexWork !== 0) {
-                    !animatingWork && gotoSectionWork(currentIndexWork - 1, -1);
-                }
-                if (currentIndexWork === 0) {
-                    enableScroll();
-                }
-            },
-            onUp: () => {
-
-                if (workSection.isActive && currentIndexWork !== 3) {
-                    !animatingWork && gotoSectionWork(currentIndexWork + 1, 1);
-                    workSecIndex = 0;
-                }
-                if (currentIndexWork === 3) {
-                    // enableScroll();
-                    workSectionLast = true;
-                    workSecIndex++;
-                }
-                if (currentIndexWork !== 3) {
-                    workSectionLast = false;
-                }
-                if (workSectionLast && workSecIndex > 1) {
-                    console.log(index)
-                    menuClick(".section-agencies");
-                    workSection.disble();
-                }
-            },
-            tolerance: 10,
-            // preventDefault: true
-        });
-
-    },
-    onLeave: () => {
-        enableScroll();
-        workSectionLast = false;
-        workSecIndex = 0;
-
-    },
-    onLeaveBack: () => {
-        enableScroll();
-        workSectionLast = false;
-        workSecIndex = 0;
-        // Observer.disconnect();
-    },
-
-});
 
 ScrollTrigger.create({
     trigger: ".work-section",
@@ -747,7 +754,7 @@ ScrollTrigger.create({
     },
 })
 
-gotoSectionWork(0, 1);
+
 
 const anim = gsap.from(childSplit1.lines, {
     duration: 1.5,
