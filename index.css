@@ -2012,9 +2012,13 @@ footer {
     .work-item {
         height: 46.4rem;
         min-height: 46.4rem;
+        position: relative;
     }
     .work-section-title {
         padding: 0;
+    }
+    .work-section .swiper-slide {
+        width: 100% !important;
     }
     .work-section-title h3 {
         padding-bottom: 3.5rem;
@@ -2024,6 +2028,7 @@ footer {
     }
     .work-list {
         width: 100%;
+        flex-direction: row;
     }
     .work-item-text {
         padding: 0 5rem;
@@ -2154,7 +2159,7 @@ footer {
     }
     .work-list {
         gap: 6.5rem;
-        height: 46.4rem;
+        height: 46.4rem !important;
     }
     .work-item img {
         height: 32.2rem;

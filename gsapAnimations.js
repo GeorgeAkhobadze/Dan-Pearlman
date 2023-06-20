@@ -479,6 +479,12 @@ function myFunction(x) {
 
             })
         })
+
+        var swiper = new Swiper(".swiper-work", {
+            slidesPerView: "auto",
+            // grabCursor: true,
+            spaceBetween: 0,
+        });
     }
 }
 
