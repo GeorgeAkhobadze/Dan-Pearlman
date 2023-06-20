@@ -1940,6 +1940,11 @@ footer {
         height: auto;
     }
     .expertise-section section {
+        visibility: hidden;
+        padding: 0;
+        transition: none;
+    }
+    .expertise-section section:first-child {
         visibility: visible;
     }
     .expertise-section-list {
@@ -1950,17 +1955,34 @@ footer {
         overflow: scroll;
         justify-content: space-between;
         margin-bottom: 0;
+        right: auto;
+        top: auto;
+        bottom: 7.6rem;
+        padding: 0 3rem;
+        /* padding: 0; */
     }
     .expertise-text h2 {
         font-size: 5rem;
         line-height: 5.5rem;
+        margin-bottom: 1rem;
     }
     .expertise-text {
-        gap: 1.5rem;
+        gap: 0;
+        position: relative;
+        top: -26rem;
+        padding: 0 3.6rem;
+        width: 100%;
     }
     .expertise-text p {
         font-size: 1.5rem;
         line-height: 2rem;
+    }
+    .bg-gradient {
+        width: 100%;
+        height: 22.4rem;
+        background: linear-gradient(black, transparent);
+        position: absolute;
+        top: 0;
     }
     .header__logo {
         width: 14.8rem;
@@ -2059,11 +2081,12 @@ footer {
         padding-bottom: 0;
     }
     .skip-down-btn {
-        transform: none;
+        /* transform: none;
         margin: 0 auto;
         position: relative;
         left: 0;
-        bottom: 0;
+        bottom: 0; */
+        bottom: 2.3rem;
     }
     .skip-down-btn-mobile {
         display: block !important;
@@ -2094,7 +2117,20 @@ footer {
         line-height: 2.4rem;
     }
     .section-agencies {
-        padding: 0rem 3rem;
+        /* padding: 0rem 3rem; */
+        padding: 0;
+    }
+    .section-agencies .swiper-wrapper {
+        padding-left: 3.5rem;
+    }
+    .section-agencies .swiper-slide {
+        width: 27.6rem !important;
+        height: 30rem;
+        margin-right: 1.2rem;
+    }
+    .section-agencies .swiper-slide img {
+        width: 27.6rem !important;
+        height: 22rem;
     }
     .agencies-title {
         font-size: 5rem;
@@ -2132,7 +2168,7 @@ footer {
     .agencies-list-item {
         height: 100%;
         min-width: fit-content;
-        min-width: 70%;
+        /* min-width: 70%; */
     }
     .agencies-list {
         height: 32.2rem;
@@ -2213,5 +2249,11 @@ footer {
     .experts-section h3 {
         font-size: 5rem;
         line-height: 5.6rem;
+    }
+    .bg {
+        top: auto;
+        height: 34rem;
+        bottom: 15rem;
+        overflow: visible;
     }
 }

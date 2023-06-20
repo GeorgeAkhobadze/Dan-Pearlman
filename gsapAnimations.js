@@ -464,6 +464,21 @@ function myFunction(x) {
 
         });
         gotoSectionWork(0, 1);
+    } else {
+
+        gsap.utils.toArray(".expertise-section-list a").forEach((a, index) => {
+
+
+            a.addEventListener("click", () => {
+                document.querySelectorAll(".expertise-section section").forEach(el => {
+                    el.style.visibility = "hidden";
+                    document.querySelector(`.expertise-section section:nth-child(${index+1})`).style.visibility = "visible";
+                })
+                nav.forEach(el => el.classList.remove("expertise-btn--active"));
+                nav[index].classList.add("expertise-btn--active");
+
+            })
+        })
     }
 }
 
@@ -798,9 +813,17 @@ ScrollTrigger.create({
 
 const swiper = new Swiper('.swiper', {
     slidesPerView: "auto",
-    spaceBetween: 80,
+    spaceBetween: 12,
     grabCursor: true,
     slidesOffsetAfter: 300,
+    breakpoints: {
+        993: {
+            slidesPerView: "auto",
+            spaceBetween: 80,
+            grabCursor: true,
+            slidesOffsetAfter: 300,
+        }
+    }
 });
 
 
