@@ -464,8 +464,283 @@ function myFunction(x) {
 
         });
         gotoSectionWork(0, 1);
-    } else {
+        let activeCardIndex = 0;
 
+function updateActiveCardIndex(direction) {
+    if (direction === 'up' && activeCardIndex < cards.length - 1) {
+        activeCardIndex++;
+    } else if (direction === 'down' && activeCardIndex > 0) {
+        activeCardIndex--;
+    }
+}
+
+const cards = document.querySelectorAll(".card");
+let cardHeadings = gsap.utils.toArray(".card-title");
+let splitCardHeadings = cardHeadings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" }));
+
+document.querySelector(".arrow-down").addEventListener("click", () => {
+
+    cards.forEach((card, index) => {
+        if (index === activeCardIndex && index !== cards.length - 1) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 1,
+                y: "100%"
+            });
+            card.classList.remove('active');
+        } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 1,
+                y: 0,
+                onStart: () => card.classList.add('active'),
+
+            });
+            gsap.fromTo(splitCardHeadings[index].chars, {
+                opacity: 0,
+                autoAlpha: 0,
+                yPercent: 300,
+            }, {
+                opacity: 1,
+                autoAlpha: 1,
+                yPercent: 0,
+                duration: 0.6,
+                delay: 0.3,
+                ease: "power2",
+                stagger: {
+                    each: 0.03,
+                    from: "random"
+                }
+            });
+            gsap.fromTo(`.card:nth-child(${index+1}) a`, {
+                opacity: 0
+            }, {
+                opacity: 1,
+                delay: 1,
+                duration: 0.5,
+            });
+        } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 0.9,
+                y: "-100px",
+                onStart: () => card.classList.remove('active'),
+
+            });
+        } else if (index === activeCardIndex + 3 && activeCardIndex + 3 <= cards.length) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 0.8,
+                y: "-200px",
+                onStart: () => card.classList.remove('active'),
+
+            });
+        }
+    });
+    updateActiveCardIndex('up');
+})
+
+document.querySelector(".arrow-up").addEventListener("click", () => {
+    console.log(activeCardIndex)
+    cards.forEach((card, index) => {
+        if (index === activeCardIndex && activeCardIndex !== 0) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 0.9,
+                y: "-100px"
+            });
+            card.classList.remove('active');
+        } else if (index === activeCardIndex - 1 && activeCardIndex + 1 >= 0) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 1,
+                y: 0,
+                onStart: () => card.classList.add('active'),
+
+            });
+            gsap.fromTo(splitCardHeadings[index].chars, {
+                opacity: 0,
+                autoAlpha: 0,
+                yPercent: -300,
+            }, {
+                opacity: 1,
+                autoAlpha: 1,
+                yPercent: 0,
+                duration: 0.6,
+                delay: 0.3,
+                ease: "power2",
+                stagger: {
+                    each: 0.03,
+                    from: "random"
+                }
+            });
+            gsap.fromTo(`.card:nth-child(${index+1}) a`, {
+                opacity: 0
+            }, {
+                opacity: 1,
+                delay: 1,
+                duration: 0.5,
+            });
+        } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length && activeCardIndex !== 0) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 0.8,
+                y: "-200px",
+                onStart: () => card.classList.remove('active'),
+
+            });
+        } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length && activeCardIndex !== 0) {
+            gsap.to(card, {
+                duration: 0.5,
+                scale: 0.7,
+                y: "-300px",
+                onStart: () => card.classList.remove('active'),
+
+            });
+        }
+    });
+    updateActiveCardIndex("down");
+})
+
+    } else {
+        let activeCardIndex = 0;
+
+        function updateActiveCardIndex(direction) {
+            if (direction === 'up' && activeCardIndex < cards.length - 1) {
+                activeCardIndex++;
+            } else if (direction === 'down' && activeCardIndex > 0) {
+                activeCardIndex--;
+            }
+        }
+        
+        const cards = document.querySelectorAll(".card");
+        let cardHeadings = gsap.utils.toArray(".card-title");
+        let splitCardHeadings = cardHeadings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" }));
+        
+        document.querySelector(".arrow-down").addEventListener("click", () => {
+        
+            cards.forEach((card, index) => {
+                if (index === activeCardIndex && index !== cards.length - 1) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 1,
+                        y: "100%"
+                    });
+                    card.classList.remove('active');
+                } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 1,
+                        y: 0,
+                        onStart: () => card.classList.add('active'),
+        
+                    });
+                    gsap.fromTo(splitCardHeadings[index].chars, {
+                        opacity: 0,
+                        autoAlpha: 0,
+                        yPercent: 300,
+                    }, {
+                        opacity: 1,
+                        autoAlpha: 1,
+                        yPercent: 0,
+                        duration: 0.6,
+                        delay: 0.3,
+                        ease: "power2",
+                        stagger: {
+                            each: 0.03,
+                            from: "random"
+                        }
+                    });
+                    gsap.fromTo(`.card:nth-child(${index+1}) a`, {
+                        opacity: 0
+                    }, {
+                        opacity: 1,
+                        delay: 1,
+                        duration: 0.5,
+                    });
+                } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 0.9,
+                        y: "-80px",
+                        onStart: () => card.classList.remove('active'),
+        
+                    });
+                } else if (index === activeCardIndex + 3 && activeCardIndex + 3 <= cards.length) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 0.8,
+                        y: "-160px",
+                        onStart: () => card.classList.remove('active'),
+        
+                    });
+                }
+            });
+            updateActiveCardIndex('up');
+        })
+        
+        document.querySelector(".arrow-up").addEventListener("click", () => {
+            console.log(activeCardIndex)
+            cards.forEach((card, index) => {
+                if (index === activeCardIndex && activeCardIndex !== 0) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 0.9,
+                        y: "-80px"
+                    });
+                    card.classList.remove('active');
+                } else if (index === activeCardIndex - 1 && activeCardIndex + 1 >= 0) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 1,
+                        y: 0,
+                        onStart: () => card.classList.add('active'),
+        
+                    });
+                    gsap.fromTo(splitCardHeadings[index].chars, {
+                        opacity: 0,
+                        autoAlpha: 0,
+                        yPercent: -300,
+                    }, {
+                        opacity: 1,
+                        autoAlpha: 1,
+                        yPercent: 0,
+                        duration: 0.6,
+                        delay: 0.3,
+                        ease: "power2",
+                        stagger: {
+                            each: 0.03,
+                            from: "random"
+                        }
+                    });
+                    gsap.fromTo(`.card:nth-child(${index+1}) a`, {
+                        opacity: 0
+                    }, {
+                        opacity: 1,
+                        delay: 1,
+                        duration: 0.5,
+                    });
+                } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length && activeCardIndex !== 0) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 0.8,
+                        y: "-160px",
+                        onStart: () => card.classList.remove('active'),
+        
+                    });
+                } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length && activeCardIndex !== 0) {
+                    gsap.to(card, {
+                        duration: 0.5,
+                        scale: 0.7,
+                        y: "-240px",
+                        onStart: () => card.classList.remove('active'),
+        
+                    });
+                }
+            });
+            updateActiveCardIndex("down");
+        })
+        
         gsap.utils.toArray(".expertise-section-list a").forEach((a, index) => {
 
 
@@ -835,143 +1110,143 @@ const swiper = new Swiper('.swiper', {
 
 
 
-let activeCardIndex = 0;
+// let activeCardIndex = 0;
 
-function updateActiveCardIndex(direction) {
-    if (direction === 'up' && activeCardIndex < cards.length - 1) {
-        activeCardIndex++;
-    } else if (direction === 'down' && activeCardIndex > 0) {
-        activeCardIndex--;
-    }
-}
+// function updateActiveCardIndex(direction) {
+//     if (direction === 'up' && activeCardIndex < cards.length - 1) {
+//         activeCardIndex++;
+//     } else if (direction === 'down' && activeCardIndex > 0) {
+//         activeCardIndex--;
+//     }
+// }
 
-const cards = document.querySelectorAll(".card");
-let cardHeadings = gsap.utils.toArray(".card-title");
-let splitCardHeadings = cardHeadings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" }));
+// const cards = document.querySelectorAll(".card");
+// let cardHeadings = gsap.utils.toArray(".card-title");
+// let splitCardHeadings = cardHeadings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" }));
 
-document.querySelector(".arrow-down").addEventListener("click", () => {
+// document.querySelector(".arrow-down").addEventListener("click", () => {
 
-    cards.forEach((card, index) => {
-        if (index === activeCardIndex && index !== cards.length - 1) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 1,
-                y: "100%"
-            });
-            card.classList.remove('active');
-        } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 1,
-                y: 0,
-                onStart: () => card.classList.add('active'),
+//     cards.forEach((card, index) => {
+//         if (index === activeCardIndex && index !== cards.length - 1) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 1,
+//                 y: "100%"
+//             });
+//             card.classList.remove('active');
+//         } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 1,
+//                 y: 0,
+//                 onStart: () => card.classList.add('active'),
 
-            });
-            gsap.fromTo(splitCardHeadings[index].chars, {
-                opacity: 0,
-                autoAlpha: 0,
-                yPercent: 300,
-            }, {
-                opacity: 1,
-                autoAlpha: 1,
-                yPercent: 0,
-                duration: 0.6,
-                delay: 0.3,
-                ease: "power2",
-                stagger: {
-                    each: 0.03,
-                    from: "random"
-                }
-            });
-            gsap.fromTo(`.card:nth-child(${index+1}) a`, {
-                opacity: 0
-            }, {
-                opacity: 1,
-                delay: 1,
-                duration: 0.5,
-            });
-        } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 0.9,
-                y: "-100px",
-                onStart: () => card.classList.remove('active'),
+//             });
+//             gsap.fromTo(splitCardHeadings[index].chars, {
+//                 opacity: 0,
+//                 autoAlpha: 0,
+//                 yPercent: 300,
+//             }, {
+//                 opacity: 1,
+//                 autoAlpha: 1,
+//                 yPercent: 0,
+//                 duration: 0.6,
+//                 delay: 0.3,
+//                 ease: "power2",
+//                 stagger: {
+//                     each: 0.03,
+//                     from: "random"
+//                 }
+//             });
+//             gsap.fromTo(`.card:nth-child(${index+1}) a`, {
+//                 opacity: 0
+//             }, {
+//                 opacity: 1,
+//                 delay: 1,
+//                 duration: 0.5,
+//             });
+//         } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 0.9,
+//                 y: "-100px",
+//                 onStart: () => card.classList.remove('active'),
 
-            });
-        } else if (index === activeCardIndex + 3 && activeCardIndex + 3 <= cards.length) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 0.8,
-                y: "-200px",
-                onStart: () => card.classList.remove('active'),
+//             });
+//         } else if (index === activeCardIndex + 3 && activeCardIndex + 3 <= cards.length) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 0.8,
+//                 y: "-200px",
+//                 onStart: () => card.classList.remove('active'),
 
-            });
-        }
-    });
-    updateActiveCardIndex('up');
-})
+//             });
+//         }
+//     });
+//     updateActiveCardIndex('up');
+// })
 
-document.querySelector(".arrow-up").addEventListener("click", () => {
-    console.log(activeCardIndex)
-    cards.forEach((card, index) => {
-        if (index === activeCardIndex && activeCardIndex !== 0) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 0.9,
-                y: "-100px"
-            });
-            card.classList.remove('active');
-        } else if (index === activeCardIndex - 1 && activeCardIndex + 1 >= 0) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 1,
-                y: 0,
-                onStart: () => card.classList.add('active'),
+// document.querySelector(".arrow-up").addEventListener("click", () => {
+//     console.log(activeCardIndex)
+//     cards.forEach((card, index) => {
+//         if (index === activeCardIndex && activeCardIndex !== 0) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 0.9,
+//                 y: "-100px"
+//             });
+//             card.classList.remove('active');
+//         } else if (index === activeCardIndex - 1 && activeCardIndex + 1 >= 0) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 1,
+//                 y: 0,
+//                 onStart: () => card.classList.add('active'),
 
-            });
-            gsap.fromTo(splitCardHeadings[index].chars, {
-                opacity: 0,
-                autoAlpha: 0,
-                yPercent: -300,
-            }, {
-                opacity: 1,
-                autoAlpha: 1,
-                yPercent: 0,
-                duration: 0.6,
-                delay: 0.3,
-                ease: "power2",
-                stagger: {
-                    each: 0.03,
-                    from: "random"
-                }
-            });
-            gsap.fromTo(`.card:nth-child(${index+1}) a`, {
-                opacity: 0
-            }, {
-                opacity: 1,
-                delay: 1,
-                duration: 0.5,
-            });
-        } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length && activeCardIndex !== 0) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 0.8,
-                y: "-200px",
-                onStart: () => card.classList.remove('active'),
+//             });
+//             gsap.fromTo(splitCardHeadings[index].chars, {
+//                 opacity: 0,
+//                 autoAlpha: 0,
+//                 yPercent: -300,
+//             }, {
+//                 opacity: 1,
+//                 autoAlpha: 1,
+//                 yPercent: 0,
+//                 duration: 0.6,
+//                 delay: 0.3,
+//                 ease: "power2",
+//                 stagger: {
+//                     each: 0.03,
+//                     from: "random"
+//                 }
+//             });
+//             gsap.fromTo(`.card:nth-child(${index+1}) a`, {
+//                 opacity: 0
+//             }, {
+//                 opacity: 1,
+//                 delay: 1,
+//                 duration: 0.5,
+//             });
+//         } else if (index === activeCardIndex + 1 && activeCardIndex + 1 <= cards.length && activeCardIndex !== 0) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 0.8,
+//                 y: "-200px",
+//                 onStart: () => card.classList.remove('active'),
 
-            });
-        } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length && activeCardIndex !== 0) {
-            gsap.to(card, {
-                duration: 0.5,
-                scale: 0.7,
-                y: "-300px",
-                onStart: () => card.classList.remove('active'),
+//             });
+//         } else if (index === activeCardIndex + 2 && activeCardIndex + 2 <= cards.length && activeCardIndex !== 0) {
+//             gsap.to(card, {
+//                 duration: 0.5,
+//                 scale: 0.7,
+//                 y: "-300px",
+//                 onStart: () => card.classList.remove('active'),
 
-            });
-        }
-    });
-    updateActiveCardIndex("down");
-})
+//             });
+//         }
+//     });
+//     updateActiveCardIndex("down");
+// })
 
 
 ScrollTrigger.create({
