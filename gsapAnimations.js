@@ -600,6 +600,12 @@ document.querySelector(".arrow-up").addEventListener("click", () => {
         }
     });
     updateActiveCardIndex("down");
+    
+})
+document.querySelector(".swiper-work").classList.remove("swiper-work");
+document.querySelector(".work-list").classList.remove("swiper-wrapper");
+document.querySelectorAll(".work-item").forEach(el=> {
+    el.classList.remove("swiper-slide")
 })
 
     } else {
