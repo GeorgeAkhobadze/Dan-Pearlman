@@ -1064,21 +1064,21 @@ h2 * {
 
 .card:nth-child(2) {
     z-index: 4;
-    transform: translate(0%, -100px) scale(0.9);
+    transform: translate(0%, -80px) scale(0.9);
     background: url(./assets/Sartorius_Präsentation_117.png);
     background-size: cover;
 }
 
 .card:nth-child(3) {
     z-index: 3;
-    transform: translate(0%, -200px) scale(0.8);
+    transform: translate(0%, -160px) scale(0.8);
     background: url(./assets/MisterSpex_Bilder_Web_Slider1.png);
     background-size: cover;
 }
 
 .card:nth-child(4) {
     z-index: 2;
-    transform: translate(0%, -300px) scale(0.7);
+    transform: translate(0%, -240px) scale(0.7);
     background: url(./assets/doctari112.png);
     background-size: cover;
 }
@@ -1982,7 +1982,7 @@ footer {
         height: 22.4rem;
         background: linear-gradient(black, transparent);
         position: absolute;
-        top: 0;
+        top: -2px;
     }
     .header__logo {
         width: 14.8rem;
@@ -2260,5 +2260,15 @@ footer {
         height: 34rem;
         bottom: 15rem;
         overflow: visible;
+    }
+    .cards-container{
+        width: 100%;
+    }
+    .card-title{
+        font-size: 5rem;
+        margin-top: -4rem;
+    }
+    .card-title .clip-text{
+        text-align: center !important;
     }
 }
