@@ -214,12 +214,13 @@ function myFunction(x) {
                             // enableScroll();
                             last = true;
                             index++;
+                            // return
 
                         }
                         if (currentIndex !== 5) {
                             last = false;
                         }
-                        if (last && index > 1) {
+                        if (last && index > 5) {
                             console.log(index)
                             menuClick(".work-section");
                             testSection.disble();
@@ -271,7 +272,7 @@ function myFunction(x) {
                         if (currentIndex !== 5) {
                             last = false;
                         }
-                        if (last && index > 1) {
+                        if (last && index > 5) {
                             console.log(index)
                             menuClick(".work-section");
                             testSection.disble();
@@ -399,7 +400,7 @@ function myFunction(x) {
                         if (currentIndexWork !== 3) {
                             workSectionLast = false;
                         }
-                        if (workSectionLast && workSecIndex > 1) {
+                        if (workSectionLast && workSecIndex > 5) {
                             console.log(workSecIndex)
                             menuClick(".section-agencies");
                             workSection.disble();
@@ -438,7 +439,7 @@ function myFunction(x) {
                         if (currentIndexWork !== 3) {
                             workSectionLast = false;
                         }
-                        if (workSectionLast && workSecIndex > 1) {
+                        if (workSectionLast && workSecIndex > 5) {
                             console.log(index)
                             menuClick(".section-agencies");
                             workSection.disble();
